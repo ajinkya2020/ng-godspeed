@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+.main-component-div {
+  margin: 0.5rem;
+}
+
+input:focus {
+  border: none;
+}
+
+.size-default {
+  height: 1.5rem
+}
+
+.size-small {
+  height: 1rem;
+}
+
+.size-large {
+  height: 2rem;
+}
+
