@@ -10,7 +10,7 @@ import { InputDirective } from './components/input/input.directive';
   declarations: [
     AppComponent,
     InputDirective,
-    TransferComponent
+    TransferComponent,
   ],
   imports: [
     BrowserModule,

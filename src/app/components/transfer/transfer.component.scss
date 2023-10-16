@@ -1,0 +1,39 @@
+.taransfer-main-div {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  height: attr(main-div-height);
+  width: attr(main-div-width);
+}
+
+.transfer-list-div {
+  width: 40%;
+  height: 100%;
+  border: 1px solid rgb(170, 170, 170);
+  margin: 0.5rem;
+  border-radius: 5px;
+}
+
+.transfer-button-group {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: auto;
+}
+
+.transfer-button {
+  margin: 0.2rem;
+  position: relative;
+  .transfer-icon-right {
+    position: absolute;
+    right: 5px;
+  }
+  .transfer-icon-left {
+    position: absolute;
+    left: 5px;
+  }
+}
+
+ul.transfer-list {
+  list-style-type: none;
+}

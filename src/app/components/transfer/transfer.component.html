@@ -1,1 +1,24 @@
-<p>transfer works!</p>
+<div class="taransfer-main-div" [style.height.px]="height" [style.width.px]="width">
+  <div class="transfer-list-div">
+    <ul class="transfer-list" *ngFor="let item of leftListData">
+      <li>
+        <input type="checkbox">
+      </li>
+    </ul>
+  </div>
+  <div class="transfer-button-group">
+    <button class="transfer-button">
+      <span>{{ buttonText[0] }}</span>
+      <span class="transfer-icon-right">></span>
+    </button>
+    <button class="transfer-button">
+      <span class="transfer-icon-left"><</span>
+      <span>{{ buttonText[1] }}</span>
+    </button>
+  </div>
+  <div class="transfer-list-div">
+    <ul class="transfer-list">
+      <li></li>
+    </ul>
+  </div>
+</div>
