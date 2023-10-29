@@ -1,11 +1,29 @@
-<div class="taransfer-main-div" [style.height.px]="height" [style.width.px]="width">
-  <div class="transfer-list-div">
-    <ul class="transfer-list" *ngFor="let item of leftListData">
-      <li>
-        <input type="checkbox">
-      </li>
-    </ul>
-  </div>
+<div
+  class="taransfer-main-div"
+  [style.height.px]="height"
+  [style.width.px]="width"
+>
+  <!-- <div class="transfer-list-div" [style.height.px]="height">
+    <div class="transfer-list-title">
+      {{ listTitle[0] }}
+    </div>
+    <div [style.height.px]="height - 31" class="transfer-list">
+      <ul
+        (change)="onCheckboxGroupChange('left')"
+      >
+        <li *ngFor="let item of leftListData">
+          <input type="checkbox" value="{{ item.checked }}" /> {{ item.title }}
+        </li>
+      </ul>
+    </div>
+  </div> -->
+  <gs-transfer-list
+    [height]="height"
+    [title]="listTitle[0]"
+    [listDirection]="'left'"
+    [itemList]="leftListData"
+    (onCheckBoxStateChange)="onCheckboxGroupChange($event)"
+  ></gs-transfer-list>
   <div class="transfer-button-group">
     <button class="transfer-button">
       <span>{{ buttonText[0] }}</span>
@@ -16,9 +34,16 @@
       <span>{{ buttonText[1] }}</span>
     </button>
   </div>
-  <div class="transfer-list-div">
+  <!-- <div class="transfer-list-div" [style.height.px]="height">
     <ul class="transfer-list">
       <li></li>
     </ul>
-  </div>
+  </div> -->
+  <gs-transfer-list
+    [height]="height"
+    [title]="listTitle[1]"
+    [listDirection]="'right'"
+    [itemList]="rightListData"
+    (onCheckBoxStateChange)="onCheckboxGroupChange($event)"
+  ></gs-transfer-list>
 </div>
