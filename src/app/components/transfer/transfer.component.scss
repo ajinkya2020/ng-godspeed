@@ -6,12 +6,11 @@
   width: attr(main-div-width);
 }
 
-.transfer-list-div {
+gs-transfer-list {
   width: 40%;
-  height: 100%;
   border: 1px solid rgb(170, 170, 170);
-  margin: 0.5rem;
-  border-radius: 5px;
+  margin: 0 0.5rem;
+  border-radius: 2px;
 }
 
 .transfer-button-group {
@@ -34,6 +33,22 @@
   }
 }
 
-ul.transfer-list {
-  list-style-type: none;
+.transfer-list {
+  overflow-y: auto;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0.45rem 0.1rem;
+    }
+  }
+}
+
+.transfer-list-title {
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  padding: 5px;
+  border-bottom: 1px solid rgb(228, 225, 225);
 }
