@@ -6,11 +6,11 @@ export interface GsTransferData {
 }
 
 export interface CheckboxGroupChange {
-  direction: string; //left, right
+  direction: 'left' | 'right';
   list: GsTransferData[];
 }
 
-export interface templateComponent {
-  id: any;
-  component: any;
+export interface SelectedItemList {
+  sourceList: GsTransferData[];
+  targetList: GsTransferData[];
 }
