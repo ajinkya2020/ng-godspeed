@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
-import { SelectedItemList, CheckboxGroupChange, GsTransferData } from './transfer.interface';
+import { GsSelectedItemList, GsCheckboxGroupChange, GsTransferData } from './transfer.interface';
 
 @Component({
   selector: 'gs-transfer',
@@ -11,7 +11,7 @@ import { SelectedItemList, CheckboxGroupChange, GsTransferData } from './transfe
     >
       <gs-transfer-list
         [height]="height"
-        [title]="listTitle[0]"
+        [title]="listTitles[0]"
         [listDirection]="'left'"
         [itemList]="leftListData"
         (onCheckBoxStateChange)="onCheckboxGroupChange($event)"
@@ -28,7 +28,7 @@ import { SelectedItemList, CheckboxGroupChange, GsTransferData } from './transfe
       </div>
       <gs-transfer-list
         [height]="height"
-        [title]="listTitle[1]"
+        [title]="listTitles[1]"
         [listDirection]="'right'"
         [itemList]="rightListData"
         (onCheckBoxStateChange)="onCheckboxGroupChange($event)"
@@ -40,36 +40,17 @@ import { SelectedItemList, CheckboxGroupChange, GsTransferData } from './transfe
 export class TransferComponent implements OnInit {
   @Input() public height: number = 300;
   @Input() public width: number = 500;
-  @Input() public listTitle: string[] = ['Source', 'Target'];
+  @Input() public listTitles: string[] = ['Source', 'Target'];
   @Input() public buttonText: string[] = ['Add', 'Remove'];
-  @Input() public leftRenderList: TemplateRef<any> | undefined;
   @Input() public leftListData: GsTransferData[] = [];
   @Input() public rightListData: GsTransferData[] = [];
-  public selectedItemList: SelectedItemList = { sourceList: [], targetList: [] };
+  public selectedItemList: GsSelectedItemList = { sourceList: [], targetList: [] };
 
-  constructor() {
-    for(let i=0; i<10; i++) {
-      if(i !== 3 && i !== 5) {
-        this.leftListData.push({
-          key: i + 1,
-          title: 'item' + String(i + 1),
-          checked: false,
-          disabled: i % 2 === 1 
-        });
-      } else {
-        this.rightListData.push({
-          key: i + 1,
-          title: 'item' + String(i + 1),
-          checked: i < 5 ? true : false,
-          disabled: i % 2 === 0
-        });
-      }
-    }
-  }
+  constructor() { }
 
   ngOnInit() { }
 
-  public onCheckboxGroupChange(checkBoxGroup: CheckboxGroupChange) {
+  public onCheckboxGroupChange(checkBoxGroup: GsCheckboxGroupChange) {
     console.log(checkBoxGroup);
     if(checkBoxGroup.direction === 'left') {
       this.selectedItemList.sourceList = checkBoxGroup.list;

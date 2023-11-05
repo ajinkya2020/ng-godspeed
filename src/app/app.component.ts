@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { GsTransferData } from './components/transfer/transfer.interface';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'custom-components';
+  public leftListData: GsTransferData[] = [];
+  public rightListData: GsTransferData[] = [];
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
-
-  public openInputComponent() {
-    this.router.navigate(['input-component'], { relativeTo: this.route });
+  constructor() {
+    for(let i=0; i<10; i++) {
+      if(i !== 3 && i !== 5) {
+        this.leftListData.push({
+          key: i + 1,
+          title: 'item' + String(i + 1),
+          checked: false,
+          disabled: i % 2 === 1 
+        });
+      } else {
+        this.rightListData.push({
+          key: i + 1,
+          title: 'item' + String(i + 1),
+          checked: i < 5 ? true : false,
+          disabled: i % 2 === 0
+        });
+      }
+    }
   }
 }

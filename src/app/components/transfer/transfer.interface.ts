@@ -5,12 +5,12 @@ export interface GsTransferData {
   disabled: boolean;
 }
 
-export interface CheckboxGroupChange {
+export interface GsCheckboxGroupChange {
   direction: 'left' | 'right';
   list: GsTransferData[];
 }
 
-export interface SelectedItemList {
+export interface GsSelectedItemList {
   sourceList: GsTransferData[];
   targetList: GsTransferData[];
 }

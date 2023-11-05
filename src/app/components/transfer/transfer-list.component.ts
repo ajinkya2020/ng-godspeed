@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { CheckboxGroupChange, GsTransferData } from "./transfer.interface";
+import { GsCheckboxGroupChange, GsTransferData } from "./transfer.interface";
 
 @Component({
   selector: 'gs-transfer-list',
@@ -22,9 +22,9 @@ import { CheckboxGroupChange, GsTransferData } from "./transfer.interface";
 export class TransferListComponent {
   @Input() height: number = 300;
   @Input() title: string = '';
-  @Input() listDirection: CheckboxGroupChange['direction'] = 'left';
+  @Input() listDirection: GsCheckboxGroupChange['direction'] = 'left';
   @Input() itemList: GsTransferData[] = [];
-  @Output() onCheckBoxStateChange = new EventEmitter<CheckboxGroupChange>();
+  @Output() onCheckBoxStateChange = new EventEmitter<GsCheckboxGroupChange>();
 
   constructor() { }
 
