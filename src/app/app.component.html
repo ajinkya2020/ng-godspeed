@@ -1,12 +1,11 @@
-<!-- <app-input></app-input>
-<app-input [size]="'small'"></app-input>
-<app-input [size]="'large'"></app-input> -->
-
-<div>
-  Input: 
-  <input customInput>
-</div>
 <div>
   Transfer:
-  <gs-transfer [height]="200" [width]="500" [buttonText]="['Add', 'Remove']"></gs-transfer>
+  <gs-transfer
+    [height]="200"
+    [width]="500"
+    [buttonText]="['Add', 'Remove']"
+    [listTitles]="['Left List', 'Right List']"
+    [leftListData]="leftListData"
+    [rightListData]="rightListData"
+  ></gs-transfer>
 </div>
