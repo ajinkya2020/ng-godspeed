@@ -9,26 +9,20 @@ body {
   margin: 0.5rem;
 }
 
-input:focus {
-  border: none;
+button {
+  background-color: #4CBB17;
+  color: white;
+  border-radius: 2px;
+  border: 1px solid
 }
 
-.size-default {
-  height: 1.5rem
+button:hover {
+  background-color: #56ca20;
 }
 
-.size-small {
-  height: 1rem;
+button:disabled {
+  color: #00000040;
+  border-color: #d9d9d9;
+  background: #f5f5f5;
 }
-
-.size-large {
-  height: 2rem;
-}
-
-// button {
-//   background-color: #4CBB17;
-//   border: 0;
-//   color: white;
-//   border-radius: 2px;
-// }
 
