@@ -1,27 +1,83 @@
-# ng-godspeed
+# ng-godspeed-transfer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+An Angular-based component, which enables seamless transfer of items between two lists.
 
-## Development server
+## Usage Example
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Import `TransferModule` into your app module
 
-## Code scaffolding
+```javascript
+import { TransferModule } from 'ng-godspeed-transfer';
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In the component's template, add the `gs-transfer` tag.
+```javascript
+<gs-transfer [leftListData]="leftListData" [rightListData]="rightListData"></gs-transfer>
+```
 
-## Build
+## Sample Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### app.component.ts
+```javascript
+import { Component } from '@angular/core';
+import { GsTransferData } from 'ng-godspeed-transfer/src/app/components/transfer/transfer.interface';
 
-## Running unit tests
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'test-ng-godspeed-transfer';
+  
+  public leftListData: GsTransferData[] = [];
+  public rightListData: GsTransferData[] = [];
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  constructor() {
+    for(let i=0; i<10; i++) {
+      if(i !== 3 && i !== 5) {
+        this.leftListData.push({
+          key: i + 1,
+          title: 'item' + String(i + 1),
+          checked: false,
+          disabled: i % 2 === 1 
+        });
+      } else {
+        this.rightListData.push({
+          key: i + 1,
+          title: 'item' + String(i + 1),
+          checked: i < 5 ? true : false,
+          disabled: i % 2 === 0
+        });
+      }
+    }
+  }
+}
+```
 
-## Running end-to-end tests
+### app.component.html
+```javascript
+<gs-transfer [leftListData]="leftListData" [rightListData]="rightListData"></gs-transfer>
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### app.module.ts
+```javascript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { TransferModule } from 'ng-godspeed-transfer';
 
-## Further help
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    TransferModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
