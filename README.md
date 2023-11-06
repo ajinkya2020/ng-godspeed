@@ -1,6 +1,7 @@
 # ng-godspeed-transfer
 
 An Angular-based component, which enables seamless transfer of items between two lists.
+![ng-godspeed-transfer](https://github.com/ajinkya2020/ng-godspeed/blob/master/src/assets/ng-godspeed-transfer.PNG?raw=true)
 
 ## Usage Example
 
@@ -81,3 +82,24 @@ import { TransferModule } from 'ng-godspeed-transfer';
 export class AppModule { }
 
 ```
+
+### API
+
+gs-transfer
+| Property  | Description | Type |
+| ---- | ------------- | -------|
+| height  | Height for the transfer component. Defaults to 200 | px |
+| width  | Width for the transfer component. Defaults to 500 | px |
+| leftListData  | The source list | GsTransferData[] |
+| rightListData  | The target list | GsTransferData[] |
+| listTitles  | The list titles. Defaults to ['Source', ['Target'] | string[] |
+| buttonText  | The button titles. Defaults to ['Add', 'Remove'] | string[] |
+
+GsTransferData
+| Property  | Description | Type |
+| ---- | ------------- | -------|
+| key  | Item key | number |
+| title  | Item title | string |
+| checked  | Item checked state | boolean |
+| disabled  | Item disabled state | boolean |
+
