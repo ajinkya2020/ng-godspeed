@@ -38,7 +38,7 @@ import { GsSelectedItemList, GsCheckboxGroupChange, GsTransferData } from './tra
   styleUrls: ['./transfer.component.scss']
 })
 export class TransferComponent implements OnInit {
-  @Input() public height: number = 300;
+  @Input() public height: number = 200;
   @Input() public width: number = 500;
   @Input() public listTitles: string[] = ['Source', 'Target'];
   @Input() public buttonText: string[] = ['Add', 'Remove'];
