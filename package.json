@@ -1,6 +1,6 @@
 {
   "name": "ng-godspeed-transfer",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -42,5 +42,11 @@
     "type": "git",
     "url": "https://github.com/ajinkya2020/ng-godspeed"
   },
-  "keywords": ["Angular", "Transfer", "Lists", "Item movement", "Source Target"]
+  "keywords": [
+    "Angular",
+    "Transfer",
+    "Lists",
+    "Item movement",
+    "Source Target"
+  ]
 }
